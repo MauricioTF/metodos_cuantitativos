@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrepentimiento</title>
+    <!-- Bootstrap CSS -->
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-top: 30px;
+            text-align: center;
+            color: #343a40;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container input {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            max-width: 300px;
+            box-sizing: border-box;
+        }
+
+        .form-container button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para las tablas */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+        color: #333; /* Color de texto */
+    }
+
+    th {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    tbody th {
+        background-color: #f8f9fa;
+        color: #000000;
+    }
+        p {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-left: 5px solid #007bff;
+        }
+
+        .main-menu {
+            display: block;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .main-menu a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .main-menu a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="main-menu">
+        <a href="index.html">Menú principal</a>
+    </div>
+
+    <h2>Ingresar datos</h2>
+
+    <div class="form-container">
+        <form method="post">
+            <input type="text" name="favorable" id="favorable" placeholder="Favorable">
+            <input type="text" name="desfavorable" id="desfavorable" placeholder="Desfavorable">
+            <button id="btn_add">Agregar</button>
+        </form>
+    </div>
+
+    <table id="table_data" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Alternativa</th>
+                <th>Favorable</th>
+                <th>Desfavorable</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Grande</th>
+            </tr>
+            <tr>
+                <th>Mediana</th>
+            </tr>
+            <tr>
+                <th>Pequeña</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Tabla arrepentimiento</h2>
+    <div class="form-container">
+        <button id="btn_arrepentimiento" class="btn btn-primary mb-3">Calcular</button>
+    </div>
+    <table id="table_arrepentimiento" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Alternativa</th>
+                <th>Favorable</th>
+                <th>Desfavorable</th>
+                <th>Máximo en fila</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Grande</th>
+            </tr>
+            <tr>
+                <th>Mediana</th>
+            </tr>
+            <tr>
+                <th>Pequeña</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Max-Min-Realismo-Laplace</h2>
+    <table id="table_fin" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Alternativa</th>
+                <th>Maximax</th>
+                <th>Maximin</th>
+                <th>Realismo</th>
+                <th>Laplace</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Grande</th>
+            </tr>
+            <tr>
+                <th>Mediana</th>
+            </tr>
+            <tr>
+                <th>Pequeña</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="form-container">
+        <form method="post">
+            <input type="text" name="porcentaje_realismo" id="porcentaje_realismo" placeholder="Porcentaje realismo">
+            <input type="text" name="probabilidad" id="probabilidad" placeholder="Probabilidad">
+            <button id="btn_porcentaje_realismo" class="btn btn-primary">Calcular</button>
+        </form>
+    </div>
+
+    <p>Maximax es el mayor de los mayores.</p>
+    <p>Maximin es el mayor de los menores.</p>
+    <p>Realismo es el resultado más alto.</p>
+    <p>Laplace es el mayor.</p>
+    <p>Criterio Valor Monetario Esperado (VME): Es como Laplace, es el mayor de Laplace. Fórmula = favorable * probabilidad(0.5) + desfavorable * probabilidad(0.5).</p>
+    <p>Minimax es el menor del resultado de la tabla de arrepentimiento.</p>
+
+    <script src="../controller/segundo.js"></script>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+</body>
+</html>

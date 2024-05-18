@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de comunicación con PHP sin recargar la página</title>
+    <!-- Bootstrap CSS -->
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+        .menu-links a {
+            display: block;
+            margin-bottom: 15px;
+            padding: 10px;
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .menu-links a:hover {
+            background-color: #0056b3;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #343a40;
+        }
+        form {
+            margin-bottom: 30px;
+        }
+        form input {
+            margin-bottom: 10px;
+        }
+        table {
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        table th, table td {
+            text-align: center;
+            padding: 10px;
+        }
+        table thead {
+            background-color: #343a40;
+            color: white;
+        }
+        table tbody tr:nth-child(odd) {
+            background-color: #e9ecef;
+        }
+        table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        #btn_add, #btn_incertidumbre {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            text-align: center;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        #btn_add:hover, #btn_incertidumbre:hover {
+            background-color: #218838;
+        }
+        #btn_incertidumbre:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu-links mb-4">
+            <a href="index.html">Menú principal</a>
+        </div>
+
+        <h2>Estado de la naturaleza</h2>
+
+        <form method="post" class="mb-4">
+            <input type="text" class="form-control" name="monto_fijo" id="monto_fijo" placeholder="Monto fijo" >
+            <input type="text" class="form-control" name="perdida_dias" id="perdida_dias" placeholder="Días perdido">
+            <input type="text" class="form-control" name="monto_perdida" id="monto_perdida" placeholder="Monto perdido por día">
+            <input type="text" class="form-control" name="gasto_adicional" id="gasto_adicional" placeholder="Gasto adicional">
+
+            <button id="btn_add" class="btn btn-success">Agregar</button>
+        </form>
+
+        <table id="miTabla" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Alternativa</th>
+                    <th>Leve</th>
+                    <th>Moderado</th>
+                    <th>Grave</th>
+                    <!-- Agrega más columnas según sea necesario -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Grande</th>
+                </tr>
+                <tr>
+                    <th>Mediana</th>
+                </tr>
+                <tr>
+                    <th>Pequeña</th>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Tabla de incertidumbre</h2>
+
+        <button id="btn_incertidumbre" class="btn btn-success" disabled>Tabla de incertidumbre</button>
+
+        <table id="table_incertidumbre" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Alternativa</th>
+                    <th>Optimista</th>
+                    <th>Pesimista</th>
+                    <th>Laplace</th>
+                    <!-- Agrega más columnas según sea necesario -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Grande</th>
+                </tr>
+                <tr>
+                    <th>Mediano</th>
+                </tr>
+                <tr>
+                    <th>Pequeña</th>
+                </tr>
+                <!-- Aquí se agregarán las filas dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../controller/estado_naturaleza_incertidumbre.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+</body>
+</html>

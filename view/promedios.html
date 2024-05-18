@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedios</title>
+    <!-- Bootstrap CSS -->
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-left: 5px solid #007bff;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+            color: #333;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        tbody th {
+            background-color: #f8f9fa;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="menu_pronosticos.html">Menú Pronósticos</a>
+    
+    <p>
+        Se solicita el nombre del mes y ventas reales para completar la tabla
+    </p>
+    <p>
+        Se solicita valor de meses para realizar el promedio y el promedio ponderado
+    </p>
+    <p>
+        Los resultados inician a colocarse en los campos n-1 
+    </p>
+    <p>
+        Fórmula de promedio = suma de los primeros n números / n
+    </p>
+
+    <form method="post">
+        <input type="text" name="mes" id="mes" placeholder="Mes" >
+        <input type="text" name="venta_real" id="venta_real" placeholder="Venta Real">
+        <button id="btn_add">Agregar</button>
+    </form>
+
+    <table id="table_data" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Mes</th>
+                <th>Venta Real</th>
+                <th>Promedio móvil</th>
+                <th>Promedio móvil ponderado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Las filas de datos se agregarán aquí -->
+        </tbody>
+    </table>
+
+    <form method="post">
+        <input type="text" name="cantidad_meses" id="cantidad_meses" placeholder="Cantidad de meses" >
+        <button id="btn_cantidad_meses">Calcular</button>
+    </form>
+
+    <script src="../controller/promedios.js"></script>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+</body>
+</html>

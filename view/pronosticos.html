@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pronósticos</title>
+    <!-- Bootstrap CSS -->
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 20px;
+        }
+
+        a {
+            display: block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        p {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-left: 5px solid #007bff;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+            color: #333;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        tbody th {
+            background-color: #f8f9fa;
+            color: #000000;
+        }
+
+        .main-menu {
+            display: block;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .main-menu a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .main-menu a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="main-menu">
+        <a href="menu_pronosticos.html">Menú Pronósticos</a>
+    </div>
+
+    <p>Se saca = DMA, EMAP, ECM..</p>
+    <p>Promedio móvil es de Pronósticos</p>
+    <p>Ventas reales y pronóstico de ventas (son dos campos de la tabla)</p>
+    <p>En otro campo se realiza la operación para sacar el DMA = suma(|venta real- pronóstico|)</p>
+    <p>Luego se sacan el resto de resultados</p>
+
+    <form method="post">
+        <input type="text" name="venta_real" id="venta_real" placeholder="Venta Real">
+        <input type="text" name="pronostico_venta" id="pronostico_venta" placeholder="Pronóstico Venta">
+        <button id="btn_add">Agregar</button>
+    </form>
+
+    <table id="table_data" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Mes</th>
+                <th>Venta Real</th>
+                <th>Pronóstico Venta</th>
+                <th>Valor Absoluto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Las filas de datos se agregarán aquí -->
+        </tbody>
+    </table>
+    
+    <button id="btn_calcular" class="btn btn-primary">Calcular</button>
+
+        <h4>DMA </h4>
+        <div id="result_dma"></div>
+        <h4>Resultado</h4>
+        <div id="result_resultado"></div>
+        <h4>ECM</h4>
+        <div id="result_ecm"></div>
+        <h4>EMAP</h4>
+        <div id="result_emap"></div>
+
+    <script src="../controller/pronosticos.js"></script>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+</body>
+</html>

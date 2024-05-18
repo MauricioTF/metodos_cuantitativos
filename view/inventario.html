@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <!-- Bootstrap CSS -->
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+
+        #container_cle {
+            margin-top: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #343a40;
+        }
+
+        p {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-left: 5px solid #007bff;
+        }
+
+        span {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-left: 5px solid #007bff;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        h4 {
+            margin-bottom: 10px;
+        }
+
+        #container_pro {
+            margin-top: 50px;
+        }
+
+        /* Agregar más estilos según sea necesario */
+    </style>
+</head>
+<body>
+    <a href="index.html">Menú principal</a>
+
+    <div id="container_cle">
+        <h2>CLE</h2>
+        <p>Q = número de piezas a ordenar</p>
+        <p>CLE = Q* = número óptimo de piezas a ordenar</p>
+        <p>D = demanda anual en unidades del artículo en inventario</p>
+        <p>Co = costo por colocar cada orden</p>
+        <p>Ch = costo anual por almacenar por unidad</p>
+        <p>Costo total anual = costo por ordenar + costo por almacenar</p>
+
+        <span>Costo anual por ordenar = (D/C)Co</span>
+        <span>Costo anual por almacenar = (Q/2)Ch</span>
+        <span>CLE = RAIZ((2*D*Co)/Ch)</span>
+
+        <form method="post">
+            <input type="text" name="d" id="d" placeholder="Demanda anual">
+            <input type="text" name="co" id="co" placeholder="Costo por colocar orden">
+            <input type="text" name="ch" id="ch" placeholder="Costo anual por almacenar">
+            <button id="btn_cle">Agregar</button>
+        </form>
+
+        <h4>Costo anual por ordenar</h4>
+        <div id="por_ordenar"></div>
+        <h4>Costo anual por almacenar</h4>
+        <div id="por_almacenar"></div>
+        <h4>CLE</h4>
+        <div id="cle"></div>
+        <h4>Costo total anual</h4>
+        <div id="total"></div>
+    </div>
+
+    <div id="container_pro">
+        <!-- Contenido adicional según sea necesario -->
+    </div>
+
+    <script src="../controller/inventario.js"></script>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+</body>
+</html>
